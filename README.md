@@ -8,7 +8,7 @@ This app is heavily inspired by toyxyz's ([X](https://twitter.com/toyxyz3)) [Com
 The app was developed with [Electron](https://github.com/electron/electron). Perhaps the JavaScript of this app could be adapted to run directly in the browser.
 
 # Installation
-_[Video tutorial combing soon](https://www.youtube.com/@miroxleon)_
+_[Video tutorial coming soon](https://www.youtube.com/@miroxleon)_
 
 I will go through the ComfyUI setup first. For the installation of this app, skip to [Lavitate Installation](https://github.com/miroleon/lavitate?tab=readme-ov-file#install-lavitate).
 
