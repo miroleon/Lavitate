@@ -10,7 +10,7 @@ The app was developed with [Electron](https://github.com/electron/electron). Per
 # Installation
 _[Video tutorial combing soon](https://www.youtube.com/@miroxleon)_
 
-I will go through the ComfyUI setup first. For the installation of this app, skip to [Lavitate Installation]().
+I will go through the ComfyUI setup first. For the installation of this app, skip to [Lavitate Installation](https://github.com/miroleon/lavitate?tab=readme-ov-file#install-lavitate).
 
 ## Install ComfyUI
 You can use this app for other workflows, but it was designed for a specific workflow with [ComfyUI](https://github.com/comfyanonymous/ComfyUI). Therefore, I recommend downloading the embedded version of ComfyUI from the [original repo](https://github.com/comfyanonymous/ComfyUI?tab=readme-ov-file#direct-link-to-download).
@@ -33,8 +33,13 @@ Then, make sure to drag-and-drop the workflow PNG below or from this app's direc
 Last, make sure to select your own model and LCM LoRA. I tested the workflow with [CyberRealistic V40](https://civitai.com/models/15003/cyberrealistic) and [LCM-LoRA Weights - Stable Diffusion Acceleration Module](https://civitai.com/models/195519/lcm-lora-weights-stable-diffusion-acceleration-module) and use "taesed" as VAE.
 
 ## Install Lavitate
-Download the [latest Lavitate release](). This will get you an archive. Unpack the archive, open the folder and run the .exe.
-**Important**: The installer will ask you the install location. If you want the paths of the workflow to run by default, choose the location of your portable ComfyUI folder. Meaning, if you have the "ComfyUI_windows_portable" folder on your Desktop, choose the Desktop as your installation location for this app. If you have another folder \AI\ComfyUI_windows_portable, install this app into the \AI\ folder. That's it!
+Download the [latest Lavitate release](https://github.com/miroleon/lavitate/releases/tag/0.0.1-pre). This will get you an archive. Unpack the archive, open the folder and run the .exe.
+**Important**: The installer will ask you the install location. If you want the paths of the workflow to run by default, choose the location of your portable ComfyUI folder. Meaning, if you have the "ComfyUI_windows_portable" folder on your Desktop, choose the Desktop as your installation location for this app.
+
+![LAVITATE Installation Location](./images/installation_location_01.jpg)
+![LAVITATE Installation Location](./images/installation_location_02.jpg)
+
+If you have another folder \AI\ComfyUI_windows_portable, install this app into the \AI\ folder. That's it!
 
 # Run the Workflow in ComfyUI
 - To start the workflow, click the checkbox "Extra options" in the ComfyUI sidepanel and then click the checkbox "Auto Queue" to endlessly generate images. Lastly, click the "Queue Prompt" button.
