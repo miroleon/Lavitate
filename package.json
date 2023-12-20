@@ -1,0 +1,46 @@
+{
+  "name": "lavitate",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "io.github.miroleon.lavitate",
+    "productName": "LAVITATE",
+    "win": {
+      "target": "nsis",
+      "icon": "images/icon_v1-0_round_base.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "extraResources": [
+      {
+        "from": "./saved_frames",
+        "to": "saved_frames"
+      },
+      {
+        "from": "./output",
+        "to": "output"
+      },
+      {
+        "from": "./prompt",
+        "to": "prompt"
+      },
+      {
+        "from": "./workflow",
+        "to": "workflow"
+      }
+    ]
+  }
+}

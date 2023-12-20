@@ -1,0 +1,183 @@
+:root {
+    --body-color: #202020;
+    --base-color: #202124;
+    --base-color-opaque: #20212446;
+    --primary-color: #ffffff;
+    --link-color: #b7bdd0;
+    --track-fill-color: #5f6368;
+    --track-bg-color: #313338;
+    --main-font: monospace;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--body-color);
+    font-family: var(--main-font);
+}
+
+a {
+    color: var(--link-color);
+}
+
+#webcam-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#webcam,
+#output-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#drawing-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#controls {
+    color: white;
+    position: fixed;
+    left: 5px;
+    bottom: 5px;
+    border-radius: 10px;
+    background: var(--base-color-opaque);
+    padding: 10px;
+    backdrop-filter: blur(5px);
+}
+
+input {
+    font-family: var(--main-font);
+    background: var(--base-color-opaque);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+select {
+    font-family: var(--main-font);
+    background: var(--base-color-opaque);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+select option {
+    background: var(--base-color);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+button {
+    font-family: var(--main-font);
+    background: var(--base-color-opaque);
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+/* Custom styles for input[type=range] */
+input[type=range] {
+    -webkit-appearance: none;
+    width: 150px;
+    background: var(--base-color-opaque);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+}
+
+#draw-ctrl{
+    display: flex;
+}
+
+input[type=range]:hover {
+    opacity: 1;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    background: var(--primary-color);
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#info-icon {
+    color: var(--primary-color);
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    cursor: pointer;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: var(--base-color-opaque);
+    /* Removed overflow-y from here to avoid double scrollbars */
+}
+
+#overlay-content {
+    position: relative;
+    width: 90%;
+    max-width: 650px;
+    margin: 100px auto; /* Keep the margin for centering */
+    color: var(--primary-color);
+    background: var(--base-color);
+    padding: 20px;
+    border-radius: 5px;
+    max-height: calc(80vh - 200px); /* Adjusting for the margin */
+    overflow-y: auto;
+    font-size: 1.25rem;
+}
+
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Custom Scrollbar Styles */
+#overlay-content::-webkit-scrollbar {
+    width: 5px; /* Scrollbar width */
+}
+
+#overlay-content::-webkit-scrollbar-track {
+    background: var(--track-bg-color); /* Track color */
+}
+
+#overlay-content::-webkit-scrollbar-thumb {
+    background: var(--track-fill-color); /* Thumb color */
+    border-radius: 10px;
+}

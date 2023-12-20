@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAVITATE – INPUT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="webcam-container">
+        <video id="webcam" autoplay></video>
+    </div>
+    <canvas id="drawing-canvas"></canvas>
+
+    <div id="controls">
+        <div id="camera-ctrl">
+            <select id="camera-selector">
+                <option value="" disabled selected>Select Input</option>
+            </select>
+            <label for="max-size">Output Size:</label>
+            <input type="number" id="max-size" placeholder="Max Size (px)" min="250" value="512">
+        </div>
+
+        <div id="draw-ctrl">
+            <input type="range" id="pen-size" min="1" max="50" value="30">
+            <input type="color" id="pen-color">
+            <button id="undo-canvas">Undo</button>
+            <button id="reset-canvas">Reset</button>
+        </div>
+
+        <div id="capture-ctrl">
+            <button id="start-capture">Start Capture</button>
+            <button id="stop-capture">Stop Capture</button>
+        </div>
+
+        <div id="prompt-ctrl">
+            <input type="text" id="textInput" placeholder="Type your prompt...">
+            <button id="openWindow">Output Window</button>
+        </div>
+    </div>
+
+    <!-- SVG Info Icon -->
+    <div id="info-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M11 17h2v-6h-2zm1-8q.425 0 .713-.288T13 8q0-.425-.288-.712T12 7q-.425 0-.712.288T11 8q0 .425.288.713T12 9m0 13q-2.075 0-3.9-.788t-3.175-2.137q-1.35-1.35-2.137-3.175T2 12q0-2.075.788-3.9t2.137-3.175q1.35-1.35 3.175-2.137T12 2q2.075 0 3.9.788t3.175 2.137q1.35 1.35 2.138 3.175T22 12q0 2.075-.788 3.9t-2.137 3.175q-1.35 1.35-3.175 2.138T12 22" />
+        </svg>
+    </div>
+
+    <!-- Overlay -->
+    <div id="overlay" style="display:none;">
+        <div id="overlay-content">
+            <div id="close-btn"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                    <path fill="currentColor"
+                        d="M16 2C8.2 2 2 8.2 2 16s6.2 14 14 14s14-6.2 14-14S23.8 2 16 2m5.4 21L16 17.6L10.6 23L9 21.4l5.4-5.4L9 10.6L10.6 9l5.4 5.4L21.4 9l1.6 1.6l-5.4 5.4l5.4 5.4z" />
+                </svg></div>
+            <h1>HOW TO USE</h1>
+            <h2>How to Setup ComfyUI</h2>
+            <ul>
+                <li>You will need some Custom Nodes for ComfyUI to run this app with its respective workflow.</li>
+                <ul>
+                    <li>First install the <a target="_blank"
+                            href="https://github.com/ltdrdata/ComfyUI-Manager?tab=readme-ov-file#installation">ComfyUI
+                            Manager</a> if you haven't already.</li>
+                    <li>Then install the <a target="_blank"
+                            href="https://github.com/ltdrdata/ComfyUI-Manager?tab=readme-ov-file#installation">WAS Node
+                            Suite</a>. When it comes to the installing of the node's requirements, make sure to run pip
+                        in PowerShell.</li>
+                </ul>
+                <li>After installing both custom nodes, it can be helpful to click on the new "Manager" tab in ComfyUI's
+                    sidebar and run "Update All".</li>
+                <li>Then, make sure to drag-and-drop the workflow PNG from this app's directory "LAVITATE\resources\workflow" into ComfyUI.</li>
+                <li>Last, make sure to select your own model and LCM LoRA</li>
+                <ul>
+                    <li>I tested the workflow with <a target="_blank" href="https://civitai.com/models/15003/cyberrealistic">CyberRealistic V40</a>
+                    </li> and <a target="_blank"
+                        href="https://civitai.com/models/195519/lcm-lora-weights-stable-diffusion-acceleration-module">LCM-LoRA
+                        Weights - Stable Diffusion Acceleration Module</a> and use "taesed" as VAE.</li>
+                </ul>
+                <li>To start the workflow, click the checkbox "Extra options" in the ComfyUI sidepanel and then click
+                    the checkbox "Auto Queue" to endlessly generate images. Lastly, click the "Queue Prompt" button.
+                </li>
+                <li>To stop the workflow, simply uncheck "Auto Queue".</li>
+                <li>Note: If you installed this app <i>not</i> on the same level as the "ComfyUI_windows_portable" folder, make sure to adapt the paths in the ComfyUI workflow.</li>
+            </ul>
+            <h2>Controls in this App</h2>
+            <ul>
+                <li>Select your webcam or OBS Virtual Cam etc. in the "Select Input" dropdown menu.</li>
+                <li>Set the length of the longest side for the exported frames behind "Output Size". The default value
+                    is 512px. Higher values may slow down the rendering in ComfyUI. When the input is too low – this can
+                    happen when you type to slow and a value such as "2" is send to ComfyUI – it can happen that ComfyUI
+                    returns an error. Simply retype your value and send a new Queue Prompt in ComfyUI.</li>
+                <li>Draw by having you mouse pressed down.</li>
+                <li>Move your drawn path by drag-and-dropping it. Currently, the drag detection isn't great. It helps to
+                    grab the drawn shape at the end of the path.</li>
+                <li>Move the slider to change the pen size.</li>
+                <li>Change the pen color by clicking on the color picker.</li>
+                <li>Click "Undo" to undo the last stroke.</li>
+                <li>Click "Reset" to clear the canvas.</li>
+                <li>Click "Start Capture" to start saving the stream to file. This will override a single file at a
+                    framerate of 4FPS.</li>
+                <li>Click "Stop Capture" to stop saving/overwriting that one file. Note: this <i>does not</i> stop the
+                    ComfyUI workflow. ComfyUI has to be stopped individually.</li>
+                <li>Click "Output Window" to open the output from ComfyUI in a new window.</li>
+            </ul>
+            <h2>Potential Issues</h2>
+            <h3>Incorrect Paths</h3>
+            <ul>
+                <li>If you don't get any output, make sure that you started the capture and that all the paths are
+                    correct. This app is supposed to be installed on the same level as the "ComfyUI_windows_portable"
+                    folder. Captured frames from this app are saved as "\LAVITATE\resources\saved_frames\capture.jpg".
+                    The output files are read from "\LAVITATE\resources\output\render.jpg". You may change these paths to
+                    your liking, but it requires to adapt the code. Otherwise make sure that the paths are correct in
+                    ComfyUI. You may want to input the absolute paths, if you're having issues.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('info-icon').onclick = function () {
+            document.getElementById('overlay').style.display = 'block';
+        };
+
+        document.getElementById('close-btn').onclick = function () {
+            document.getElementById('overlay').style.display = 'none';
+        };
+
+    </script>
+
+    <script src="renderer.js"></script>
+</body>
+
+</html>
