@@ -61,7 +61,7 @@ If you have another location for ComfyUI, like \AI\ComfyUI_windows_portable in t
 
 # Potential Issues
 ## Incorrect Paths
-- If you don't get any output, make sure that you started the capture and that all the paths are correct. This app is supposed to be installed on the same level as the "ComfyUI_windows_portable" folder. Captured frames from this app are saved as "\\LAVITATE\\resources\\saved_frames\\capture.jpg". The output files are read from "\\LAVITATE\\resources\\output\\render.jpg". You may change these paths to your liking, but it requires to adapt the code. Otherwise, make sure that the paths are correct in ComfyUI. You may want to input the absolute paths if you're having issues.
+If you don't get any output, make sure that you started the capture and that all the paths are correct. This app is supposed to be installed on the same level as the "ComfyUI_windows_portable" folder. Captured frames from this app are saved as "\\LAVITATE\\resources\\saved_frames\\capture.jpg". The output files are read from "\\LAVITATE\\resources\\output\\render.jpg". You may change these paths to your liking, but it requires to adapt the code. Otherwise, make sure that the paths are correct in ComfyUI. You may want to input the absolute paths if you're having issues.
 
 ## Using OBS Virtual Camera
 At the moment, in order to select OBS's Virtual Camera, it might be necessary to first open LAVITATE and then select OBS Virtual Camera as input. Then, the OBS placeholder screen should appear. _Only then_ open OBS and start the Virtual Camera. If OBS is already open and the Virtual Camera is started, _and then_ LAVITATE is opened, it can happen that no input selection is available.
