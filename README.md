@@ -1,4 +1,7 @@
-![LAVITATE Header Image](./images/header_01.jpg)
+![LAVITATE Header Image](./assets/header_01.jpg)
+
+![LAVITATE Demo](./assets/lavitate-demo.gif)
+_[Video source](https://www.pexels.com/video/a-woman-holding-a-space-helmet-7169950/) via OBS Virtual Cam with prompt "a woman, looking at a space helmet made from porcelain, blue bird"
 
 # Preface
 Caution: This is an _experimental app_. I created it for myself to have a more pleasant workflow. I'm not a classically trained dev and cannot guarantee that the app works in any environment or that the code is clean by any means. Thus, you run it at your own risk, while I want to highlight that I built the app with no malicious intent. I'm happy for any feedback and/or contributions by potential users and more experienced devs who can identify potential issues with the code, etc.
@@ -36,13 +39,13 @@ Last, make sure to select your own model and LCM LoRA. I tested the workflow wit
 Download the [latest Lavitate release](https://github.com/miroleon/lavitate/releases/tag/0.0.1-pre). This will get you an archive. Unpack the archive, open the folder and run the .exe.
 **Important**: The installer will ask you for the installation location. If you want the paths of the workflow to run by default, choose the location of your portable ComfyUI folder. Meaning, if you have the "ComfyUI_windows_portable" folder on your Desktop, select the Desktop as your installation location for this app.
 
-![LAVITATE Installation Location](./images/installation_location_01.jpg)
-![LAVITATE Installation Location](./images/installation_location_02.jpg)
+![LAVITATE Installation Location](./assets/installation_location_01.jpg)
+![LAVITATE Installation Location](./assets/installation_location_02.jpg)
 
 If you have another location for ComfyUI, like \AI\ComfyUI_windows_portable in the image above, install this app into the \AI\ folder. That's it!
 
 # Run the Workflow in ComfyUI
-- To start the workflow, click the checkbox "Extra options" in the ComfyUI side panel and then click the checkbox "Auto Queue" to generate images endlessly. Lastly, click the "Queue Prompt" button.
+- To start the workflow, click the checkbox "Extra options" in the ComfyUI side panel and then click the checkbox "Auto Queue" to generate assets endlessly. Lastly, click the "Queue Prompt" button.
 - To stop the workflow, simply uncheck "Auto Queue".
 - Note: If you **didn't** install this app on the same level as the "ComfyUI_windows_portable" folder, make sure to adapt the paths in the ComfyUI workflow.
 
