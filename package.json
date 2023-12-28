@@ -41,6 +41,10 @@
         "from": "./workflow",
         "to": "workflow"
       }
+    ],
+    "files": [
+      "**/*",
+      "!assets/**/*"
     ]
   }
 }
