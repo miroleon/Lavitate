@@ -1,7 +1,7 @@
 ![LAVITATE Header Image](./assets/header_01.jpg)
 
 ![LAVITATE Demo](./assets/lavitate-demo.gif)
-_[Video source](https://www.pexels.com/video/a-woman-holding-a-space-helmet-7169950/) via OBS Virtual Cam with prompt "a woman, looking at a space helmet made from porcelain, blue bird"?
+_[Video source](https://www.pexels.com/video/a-woman-holding-a-space-helmet-7169950/) via OBS Virtual Cam with prompt "a woman, looking at a space helmet made from porcelain, blue bird"_
 
 # Preface
 Caution: This is an _experimental app_. I created it for myself to have a more pleasant workflow. I'm not a classically trained dev and cannot guarantee that the app works in any environment or that the code is clean by any means. Thus, you run it at your own risk, while I want to highlight that I built the app with no malicious intent. I'm happy for any feedback and/or contributions by potential users and more experienced devs who can identify potential issues with the code, etc.
